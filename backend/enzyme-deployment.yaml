@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enzyme-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enzyme-app
+  template:
+    metadata:
+      labels:
+        app: enzyme-app
+    spec:
+      containers:
+      - name: enzyme-app
+        image: marchjiao/enzyme-app1
+        ports:
+        - containerPort: 80
